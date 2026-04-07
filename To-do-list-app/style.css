@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: url(Bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(13px);
+  pointer-events: none;
+  /* hover block না করার জন্য */
+
+}
+
+.container {
+  border: solid rgba(255, 255, 255, 0.55) 1px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 20px;
+  backdrop-filter: blur(150px);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+
+}
+
+.todo-app {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(15px);
+}
+
+.todo-app h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+.stat-container {
+  
+   width: 100%;
+   padding: 15px 20px ;
+   border-radius: 15px;
+   border: 2px solid rgba(0, 0, 0, 0.15);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap:20%;
+}
+.details 
+{
+  width:100%;
+  /* flex:1; */
+}
+.details h3 {
+
+color:#fff;
+}
+#progress-bar {
+ 
+  width: 120%;
+  height: 7px;
+   background: rgba(206, 224, 194, 0.776);
+  border-radius: 30px;
+  position:relative;
+  margin-top: 15px;
+}
+
+#progress
+{
+  width:50%;
+  height:100%;
+  border-radius: 30px;
+  background: rgba(5, 176, 250, 0.655);
+  transition: width 0.3s ease;
+ 
+
+}
+
+#numbers {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+   width: 80px;
+  height: 80px;
+  background: #6fc5ff;
+  border:2px solid rgba(255, 255, 255, 0.55);
+  border-radius:50%;
+  font-weight: bold;
+  font-size: 1.3rem;
+
+}
+
+.input-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
+.input-area input {
+
+  flex: 1;
+  padding: 10px 17px;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  background: rgba(206, 224, 194, 0.776);
+  color: #090c02dc;
+}
+
+/* - border → সবসময় দৃশ্যমান ফ্রেম।
+- outline → শুধু ফোকাস বা active অবস্থায় দেখা যায় */
+.input-area button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 10%;
+  font-size: 1.1rem;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  background: rgba(206, 224, 194, 0.776);
+  color: #090c02dc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.input-area button:hover {
+  transform: scale(1.2);
+  background: #6fc5ff;
+}
+
+.todos-container {
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todos-container img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 40%;
+  margin-left: 50px;
+  border-radius: 20px;
+}
+
+#task-list {
+  width: 100%;
+}
+
+#task-list li {
+  display: flex;
+  justify-content: flex-start;
+  /* একসাথে শুরুতে বসবে */
+  gap: 6px;
+  /* checkbox আর টেক্সটের মধ্যে ফাঁকা */
+  align-items: center;
+  background: rgba(206, 224, 194, 0.776);
+  border-radius: 30px;
+  margin-bottom: 8px;
+  padding: 8px 10px;
+  font-size: 1.2rem;
+  color: #090c02dc;
+
+  transition: box-all 0.2s ease;
+}
+
+#task-list li:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  /* shadow গাঢ় */
+  transform: scale(1.05);
+  /* hover করলে একটু বড় হবে */
+}
+
+#task-list li .checkbox {
+  min-width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background: transparent;
+  border-radius: 50%;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#task-list li .checkbox:checked {
+  background: rgb(94, 175, 200);
+  transform: scale(1.2);
+
+}
+
+#task-list li .checkbox:checked:after {
+  content: '\2714';
+  color: #090c02dc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#task-list li span {
+  flex: 1;
+  margin-left: 10px;
+  word-wrap: break-word;
+}
+
+#task-list li.completed {
+  background: rgba(0, 0, 0, 0.1);
+  /* হালকা ফিকে ব্যাকগ্রাউন্ড */
+  transform: scale(0.98);
+  /* একটু ছোট হয়ে যাবে */
+  opacity: 0.7;
+  /* ফিকে হয়ে যাবে */
+  transition: all 0.3s ease;
+}
+
+
+
+#task-list li.completed span {
+  text-decoration: line-through;
+  /* শুধু লাইন-থ্রু */
+  text-decoration-thickness: 2px;
+  /* লাইন কতটা মোটা হবে */
+  text-decoration-color: #000;
+  /* লাইন কালার */
+  color: #000;
+  /* টেক্সট কালার */
+}
+
+.task-button {
+  display: flex;
+  gap: 10px;
+  margin-right: auto;
+}
+
+.task-button button {
+  background: rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: #090c02dc;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.task-button button:hover {
+  transform: scale(1.2);
+}
+
+.task-button .edit-btn {
+  background: rgb(124, 181, 67);
+}
+
+.task-button .delete-btn {
+  background-color: rgb(250, 95, 95);
+}
