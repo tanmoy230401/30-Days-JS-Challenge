@@ -1,1 +1,1 @@
-**Live Demo:** [Click Here](httpsDME.md](https://tanmoy230401.github.io/30-Days-JS-Challenge/))
+**Live Demo:** [Click Here](https://tanmoy230401.github.io/30-Days-JS-Challenge/)
