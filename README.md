@@ -2,3 +2,4 @@
 - ☁️ [Weather App](https://tanmoy230401.github.io/30-Days-JS-Challenge/Weather_app/)
 - ✅ [To-do List App](https://tanmoy230401.github.io/30-Days-JS-Challenge/To-do-list-app/)
 - 🔢 [Counter App](https://tanmoy230401.github.io/30-days/Counter_app/)
+- [Quiz-app](https://github.com/tanmoy230401/30-Days-JS-Challenge/tree/main/Quiz-app)
